@@ -76,30 +76,29 @@ All state transitions are stored in an execution log (`PHX_DEPLOY_LOG`), enablin
 
 This project maps system behavior under increasing OT/IT stress conditions:
 
-* **[DONE] Test #1 — Full Topology Rebuild** <br> *(Phoenix Phase)* 
-  Idempotency proof, one-click rebuild in seconds, hot-patching.
+* **[DONE] Test #1 — Full Topology Rebuild** <br>
+  Idempotency proof, one-click rebuild in seconds, hot-patching.  *(Phoenix Phase)*
 
-* **[DONE] Test #2 — Tag Burst Provisioning**
-  *(Icarus Phase)*
-  Historian write degradation confirmed at ~2,700 tags/sec, ~30k tags.
+* **[DONE] Test #2 — Tag Burst Provisioning** <br>
+  Historian write degradation confirmed at ~2,700 tags/sec, ~30k tags.  *(Icarus Phase)*
 
-* **[PLANNED] Test #3 — Subscription Storm**
-  *(Connection Storm Phase)*  Gateway memory collapse threshold under mass OPC UA subscriptions.
+* **[PLANNED] Test #3 — Subscription Storm** <br>
+  Gateway memory collapse threshold under mass OPC UA subscriptions.  *(Connection Storm Phase)*
 
-* **[PLANNED] Test #4 — DB Overweight (Max IO Scope)**
-  *(Atlas Phase)*  Maximum database writes with simulated disk errors.
+* **[PLANNED] Test #4 — DB Overweight (Max IO Scope)** <br>
+  Maximum database writes with simulated disk errors.  *(Atlas Phase)*
 
-* **[PLANNED] Test #5 — Connection Loss Matrix**
-  *(Hades Phase)*  Every failure combination: partial loss, flapping, timeout cascades.
+* **[PLANNED] Test #5 — Connection Loss Matrix** <br>
+  Every failure combination: partial loss, flapping, timeout cascades.  *(Hades Phase)*
 
-* **[PLANNED] Test #6 — Machine to Capital Impact Tracing**
-  *(Daedalus Phase)*  Data path from machine sensor to financial loss number.
+* **[PLANNED] Test #6 — Machine to Capital Impact Tracing** <br>
+  Data path from machine sensor to financial loss number.  *(Daedalus Phase)*
 
-* **[VISION] Test #7 — Predictive Intelligence Engine**
-  *(Artemis Phase)*  ML layer on top of the IaC stack.
+* **[VISION] Test #7 — Predictive Intelligence Engine** <br>
+  ML layer on top of the IaC stack.  *(Artemis Phase)*
 
-* **[VISION] Test #8 — Built-In PLC Simulator & Playground**
-  *(Prometheus Phase)*  Embedded PLC simulation environment for CI loops.
+* **[VISION] Test #8 — Built-In PLC Simulator & Playground** <br>
+  Embedded PLC simulation environment for CI loops.  *(Prometheus Phase)*
   
 ---
 
