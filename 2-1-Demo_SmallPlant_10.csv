@@ -1,0 +1,11 @@
+L5_Enterprise,L4_Site,L3_Area,L2_Line,L1_Cell,L0_Asset,UDT_Type,PLC_OPCUA_Server,OPC_Idx,Parent_Asset
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,1,
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,COLD_PRESS_01,PRESS_MACHINE,macwin,2,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,HOT_PRESS_01,PRESS_MACHINE,macwin,3,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,TRIM_01,PRESS_MACHINE,macwin,4,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,STACKER_01,PRESS_MACHINE,macwin,5,TRIM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,FEEDER_01,PRESS_MACHINE,macwin,6,
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,COLD_PRESS_01,PRESS_MACHINE,macwin,7,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,TRIM_01,PRESS_MACHINE,macwin,8,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,COLD_PRESS_02,PRESS_MACHINE,macwin,9,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,10,

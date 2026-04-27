@@ -1,0 +1,101 @@
+L5_Enterprise,L4_Site,L3_Area,L2_Line,L1_Cell,L0_Asset,UDT_Type,PLC_OPCUA_Server,OPC_Idx,Parent_Asset
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,1,
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,COLD_PRESS_01,PRESS_MACHINE,macwin,2,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,HOT_PRESS_01,PRESS_MACHINE,macwin,3,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,TRIM_01,PRESS_MACHINE,macwin,4,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 1,STACKER_01,PRESS_MACHINE,macwin,5,TRIM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,CONVEYOR_01,PRESS_MACHINE,macwin,6,
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,ROBOT_ARM_01,PRESS_MACHINE,macwin,7,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,PACKER_01,PRESS_MACHINE,macwin,8,ROBOT_ARM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,9,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 3,COLD_PRESS_01,PRESS_MACHINE,macwin,10,
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 3,COLD_PRESS_02,PRESS_MACHINE,macwin,11,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 3,HOT_PRESS_01,PRESS_MACHINE,macwin,12,
+Acme Global,Pekin,AG_Assembly,AG_Line 1,AG_Cell 3,TRIM_01,PRESS_MACHINE,macwin,13,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,14,
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 1,COLD_PRESS_01,PRESS_MACHINE,macwin,15,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 1,HOT_PRESS_01,PRESS_MACHINE,macwin,16,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 1,TRIM_01,PRESS_MACHINE,macwin,17,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 1,STACKER_01,PRESS_MACHINE,macwin,18,TRIM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 2,CONVEYOR_01,PRESS_MACHINE,macwin,19,
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 2,ROBOT_ARM_01,PRESS_MACHINE,macwin,20,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 2,PACKER_01,PRESS_MACHINE,macwin,21,ROBOT_ARM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,22,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 3,COLD_PRESS_01,PRESS_MACHINE,macwin,23,
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 3,COLD_PRESS_02,PRESS_MACHINE,macwin,24,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 3,HOT_PRESS_01,PRESS_MACHINE,macwin,25,
+Acme Global,Pekin,AG_Assembly,AG_Line 2,AG_Cell 3,TRIM_01,PRESS_MACHINE,macwin,26,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,27,
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 1,COLD_PRESS_01,PRESS_MACHINE,macwin,28,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 1,HOT_PRESS_01,PRESS_MACHINE,macwin,29,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 1,TRIM_01,PRESS_MACHINE,macwin,30,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 1,STACKER_01,PRESS_MACHINE,macwin,31,TRIM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 2,CONVEYOR_01,PRESS_MACHINE,macwin,32,
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 2,ROBOT_ARM_01,PRESS_MACHINE,macwin,33,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 2,PACKER_01,PRESS_MACHINE,macwin,34,ROBOT_ARM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,35,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 3,COLD_PRESS_01,PRESS_MACHINE,macwin,36,
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 3,COLD_PRESS_02,PRESS_MACHINE,macwin,37,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 3,HOT_PRESS_01,PRESS_MACHINE,macwin,38,
+Acme Global,Pekin,AG_Assembly,AG_Line 3,AG_Cell 3,TRIM_01,PRESS_MACHINE,macwin,39,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,40,
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 1,COLD_PRESS_01,PRESS_MACHINE,macwin,41,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 1,HOT_PRESS_01,PRESS_MACHINE,macwin,42,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 1,TRIM_01,PRESS_MACHINE,macwin,43,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 1,STACKER_01,PRESS_MACHINE,macwin,44,TRIM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 2,CONVEYOR_01,PRESS_MACHINE,macwin,45,
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 2,ROBOT_ARM_01,PRESS_MACHINE,macwin,46,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 2,PACKER_01,PRESS_MACHINE,macwin,47,ROBOT_ARM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,48,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 3,COLD_PRESS_01,PRESS_MACHINE,macwin,49,
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 3,COLD_PRESS_02,PRESS_MACHINE,macwin,50,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 3,HOT_PRESS_01,PRESS_MACHINE,macwin,51,
+Acme Global,Pekin,AG_Assembly,AG_Line 4,AG_Cell 3,TRIM_01,PRESS_MACHINE,macwin,52,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,53,
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 1,COLD_PRESS_01,PRESS_MACHINE,macwin,54,FEEDER_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 1,HOT_PRESS_01,PRESS_MACHINE,macwin,55,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 1,TRIM_01,PRESS_MACHINE,macwin,56,HOT_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 1,STACKER_01,PRESS_MACHINE,macwin,57,TRIM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 2,CONVEYOR_01,PRESS_MACHINE,macwin,58,
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 2,ROBOT_ARM_01,PRESS_MACHINE,macwin,59,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 2,PACKER_01,PRESS_MACHINE,macwin,60,ROBOT_ARM_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,61,CONVEYOR_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 3,COLD_PRESS_01,PRESS_MACHINE,macwin,62,
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 3,COLD_PRESS_02,PRESS_MACHINE,macwin,63,COLD_PRESS_01
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 3,HOT_PRESS_01,PRESS_MACHINE,macwin,64,
+Acme Global,Pekin,AG_Assembly,AG_Line 5,AG_Cell 3,TRIM_01,PRESS_MACHINE,macwin,65,HOT_PRESS_01
+Acme Global,Pekin,AG_Maintenance,AG_Line 1,AG_Cell 1,CALIBRATOR_01,PRESS_MACHINE,macwin,66,
+Acme Global,Pekin,AG_Maintenance,AG_Line 1,AG_Cell 1,MAINT_UNIT_01,PRESS_MACHINE,macwin,67,
+Acme Global,Pekin,AG_Maintenance,AG_Line 1,AG_Cell 1,INSPECTOR_01,PRESS_MACHINE,macwin,68,
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,1,
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 1,COATER_01,PRESS_MACHINE,macwin,2,FEEDER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 1,DRYER_01,PRESS_MACHINE,macwin,3,COATER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 1,COATER_02,PRESS_MACHINE,macwin,4,FEEDER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 1,DRYER_02,PRESS_MACHINE,macwin,5,COATER_02
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 2,SORTER_01,PRESS_MACHINE,macwin,6,
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 2,INSPECTOR_01,PRESS_MACHINE,macwin,7,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 2,INSPECTOR_02,PRESS_MACHINE,macwin,8,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,9,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_1,AM_Cell 3,CALIBRATOR_01,PRESS_MACHINE,macwin,10,
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,11,
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 1,COATER_01,PRESS_MACHINE,macwin,12,FEEDER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 1,DRYER_01,PRESS_MACHINE,macwin,13,COATER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 1,COATER_02,PRESS_MACHINE,macwin,14,FEEDER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 1,DRYER_02,PRESS_MACHINE,macwin,15,COATER_02
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 2,SORTER_01,PRESS_MACHINE,macwin,16,
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 2,INSPECTOR_01,PRESS_MACHINE,macwin,17,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 2,INSPECTOR_02,PRESS_MACHINE,macwin,18,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,19,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_2,AM_Cell 3,CALIBRATOR_01,PRESS_MACHINE,macwin,20,
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,21,
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 1,COATER_01,PRESS_MACHINE,macwin,22,FEEDER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 1,DRYER_01,PRESS_MACHINE,macwin,23,COATER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 1,COATER_02,PRESS_MACHINE,macwin,24,FEEDER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 1,DRYER_02,PRESS_MACHINE,macwin,25,COATER_02
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 2,SORTER_01,PRESS_MACHINE,macwin,26,
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 2,INSPECTOR_01,PRESS_MACHINE,macwin,27,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 2,INSPECTOR_02,PRESS_MACHINE,macwin,28,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 2,QC_STATION_01,PRESS_MACHINE,macwin,29,SORTER_01
+Acme Global,Mumbai,AM_Assembly,AM_Line_3,AM_Cell 3,CALIBRATOR_01,PRESS_MACHINE,macwin,30,
+Acme Global,Mumbai,AM_Assembly,AM_Line_4,AM_Cell 1,FEEDER_01,PRESS_MACHINE,macwin,31,
+Acme Global,Mumbai,AM_Assembly,AM_Line_4,AM_Cell 1,COATER_01,PRESS_MACHINE,macwin,32,FEEDER_01

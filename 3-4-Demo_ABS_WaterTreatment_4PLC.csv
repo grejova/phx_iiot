@@ -1,0 +1,26 @@
+L5_Enterprise,L4_Site,L3_Area,L2_Line,L1_Cell,L0_Asset,UDT_Type,PLC_OPCUA_Server,OPC_Idx,Parent_Asset
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC01_Inlet_EQ,RAW_WATER_INLET_SKID_01,WATER_PROCESS_UNIT,macwin,1,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC01_Inlet_EQ,INLET_FLOW_METER_01,WATER_PROCESS_UNIT,macwin,2,RAW_WATER_INLET_SKID_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC01_Inlet_EQ,SCREEN_FILTER_01,WATER_PROCESS_UNIT,macwin,3,RAW_WATER_INLET_SKID_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC01_Inlet_EQ,EQUALIZATION_TANK_01,WATER_PROCESS_UNIT,macwin,4,SCREEN_FILTER_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC01_Inlet_EQ,TRANSFER_PUMP_01,WATER_PROCESS_UNIT,macwin,5,EQUALIZATION_TANK_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC01_Inlet_EQ,PH_NEUTRALIZATION_SKID_01,WATER_PROCESS_UNIT,macwin,6,EQUALIZATION_TANK_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC02_Filtration_UF,MULTIMEDIA_FILTER_01,WATER_PROCESS_UNIT,macwin,7,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC02_Filtration_UF,ACTIVE_CARBON_FILTER_01,WATER_PROCESS_UNIT,macwin,8,MULTIMEDIA_FILTER_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC02_Filtration_UF,SOFTENER_SKID_01,WATER_PROCESS_UNIT,macwin,9,ACTIVE_CARBON_FILTER_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC02_Filtration_UF,UF_FEED_PUMP_01,WATER_PROCESS_UNIT,macwin,10,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC02_Filtration_UF,UF_UNIT_01,WATER_PROCESS_UNIT,macwin,11,UF_FEED_PUMP_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC02_Filtration_UF,UF_BACKWASH_SKID_01,WATER_PROCESS_UNIT,macwin,12,UF_UNIT_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC03_RO_Permeate,HP_PUMP_01,WATER_PROCESS_UNIT,macwin,13,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC03_RO_Permeate,RO_STAGE_01,WATER_PROCESS_UNIT,macwin,14,HP_PUMP_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC03_RO_Permeate,RO_STAGE_02,WATER_PROCESS_UNIT,macwin,15,RO_STAGE_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC03_RO_Permeate,PERMEATE_TANK_01,WATER_PROCESS_UNIT,macwin,16,RO_STAGE_02
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC03_RO_Permeate,REMINERALIZATION_SKID_01,WATER_PROCESS_UNIT,macwin,17,PERMEATE_TANK_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC03_RO_Permeate,UV_DISINFECTION_01,WATER_PROCESS_UNIT,macwin,18,REMINERALIZATION_SKID_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,CIP_SKID_01,WATER_PROCESS_UNIT,macwin,19,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,CHEMICAL_DOSING_SKID_01,WATER_PROCESS_UNIT,macwin,20,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,SLUDGE_HOLDING_TANK_01,WATER_PROCESS_UNIT,macwin,21,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,FILTER_PRESS_01,WATER_PROCESS_UNIT,macwin,22,SLUDGE_HOLDING_TANK_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,EFFLUENT_DISCHARGE_SKID_01,WATER_PROCESS_UNIT,macwin,23,
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,FINAL_CONDUCTIVITY_ANALYZER_01,WATER_PROCESS_UNIT,macwin,24,EFFLUENT_DISCHARGE_SKID_01
+ABS Su Aritma,ABS Demo Site,Water_Treatment,WTP_Train_A,PLC04_CIP_Sludge_Discharge,UTILITY_AIR_SKID_01,WATER_PROCESS_UNIT,macwin,25,
