@@ -76,7 +76,7 @@ All state transitions are stored in an execution log (`PHX_DEPLOY_LOG`), enablin
 
 This project maps system behavior under increasing OT/IT stress conditions:
 
-* **[DONE] Test #1 — Full Topology Rebuild**  *(Phoenix Phase)* 
+* **[DONE] Test #1 — Full Topology Rebuild** <br> *(Phoenix Phase)* 
   Idempotency proof, one-click rebuild in seconds, hot-patching.
 
 * **[DONE] Test #2 — Tag Burst Provisioning**
