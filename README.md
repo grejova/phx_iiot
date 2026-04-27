@@ -72,7 +72,7 @@ All state transitions are stored in an execution log (`PHX_DEPLOY_LOG`), enablin
 
 ---
 
-## Engineering Research Program & Test Phases
+## Engineering Researchs (Controlled Chaos Experiments)
 
 This project maps system behavior under increasing OT/IT stress conditions:
 
