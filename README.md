@@ -76,13 +76,14 @@ All state transitions are stored in an execution log (`PHX_DEPLOY_LOG`), enablin
 
 This project maps system behavior under increasing OT/IT stress conditions:
 
-* **[DONE] Test #1 — Full Topology Rebuild**
-  *(Phoenix Phase)*  Idempotency proof, one-click rebuild in seconds, hot-patching.
+* **[DONE] Test #1 — Full Topology Rebuild** *(Phoenix Phase)*
+  Idempotency proof, one-click rebuild in seconds, hot-patching.
 
-* **[DONE] Test #2 — 1M Tag Provisioning**
-  *(Icarus Phase)*  Historian write degradation confirmed at ~2,700 tags/sec, ~30k tags.
+* **[DONE] Test #2 — Tag Provisioning**
+  *(Icarus Phase)*
+  Historian write degradation confirmed at ~2,700 tags/sec, ~30k tags.
 
-* **[PLANNED] Test #3 — Subscription Storm (1,000 PLC)**
+* **[PLANNED] Test #3 — Subscription Storm**
   *(Connection Storm Phase)*  Gateway memory collapse threshold under mass OPC UA subscriptions.
 
 * **[PLANNED] Test #4 — DB Overweight (Max IO Scope)**
