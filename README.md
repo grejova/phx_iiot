@@ -8,6 +8,16 @@ PHX IIoT is an experimental rebuild provisioning layer for Inductive Automation 
 
 The core engineering focus is state-aware deployment semantics. Rather than manually configuring a SCADA environment, this layer deterministically generates the foundation (Tags, UDT instances, Database schemas, and Perspective UI structure) from a single ISA-95-aligned CSV model.
 
+Concept Videos:
+
+Full Topology Rebuild - Phoenix Phase;
+1- https://youtu.be/BU7qWBIWs_4
+2- https://youtu.be/VquVNYi_Z9U
+
+Tag Burst Provisioning - Icarus Phase;
+https://youtu.be/Ci-ngGc4NF8
+
+
 ## The Engineering Problem
 
 Traditional SCADA deployments often suffer from:
