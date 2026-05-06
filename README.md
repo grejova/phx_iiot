@@ -11,8 +11,8 @@ The core engineering focus is state-aware deployment semantics. Rather than manu
 Concept Videos:
 
 Full Topology Rebuild - Phoenix Phase;
-1- https://youtu.be/BU7qWBIWs_4
-2- https://youtu.be/VquVNYi_Z9U
+1- Rebuild Provisioning Layer: https://youtu.be/BU7qWBIWs_4
+2- Rebuild Provisioning & Reconciliation Layer: https://youtu.be/VquVNYi_Z9U
 
 Tag Burst Provisioning - Icarus Phase;
 https://youtu.be/Ci-ngGc4NF8
