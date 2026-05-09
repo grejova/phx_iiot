@@ -1,125 +1,286 @@
-# PHX IIoT — Runtime Orchestration Layer
-### Declarative and Deterministic SCADA/MES Foundation Provisioning
-**Ignition as Code**
+# PHX IIoT
+## Runtime Orchestration Layer for Ignition
 
-PHX IIoT is an experimental rebuild provisioning layer for Inductive Automation Ignition. It serves as an architectural research prototype to test deterministic state generation, topology management, and Infrastructure as Code (IaC) principles within industrial SCADA/MES environments.
+![Platform](https://img.shields.io/badge/platform-Ignition-blue)
+![Mode](https://img.shields.io/badge/runtime-governed%20reconciliation-0a7f5a)
+![Source](https://img.shields.io/badge/source-CSV%20%7C%20GIT-6b7280)
+![Scope](https://img.shields.io/badge/scope-SCADA%2FMES%20foundation-2563eb)
 
-> *"The system is not the truth. The definition is."*
+Declarative runtime provisioning, governed reconciliation, and replayable deployment state for Ignition-based SCADA/MES foundations.
 
-The core engineering focus is state-aware deployment semantics. Rather than manually configuring a SCADA environment, this layer deterministically generates the foundation (Tags, UDT instances, Database schemas, and Perspective UI structure) from a single ISA-95-aligned CSV model.
+> "The system is not the truth. The definition is."
 
-## Concept Videos:
+PHX IIoT is a runtime orchestration layer for Inductive Automation Ignition.
 
-### Full Topology Rebuild - Phoenix Phase
-1- Rebuild Provisioning Layer: https://youtu.be/BU7qWBIWs_4
+It enables deterministic provisioning, topology-driven deployment, historian-aware verification, governed runtime drift handling, and replayable deployment state from a structured source definition.
 
-2- Rebuild Provisioning & Reconciliation Layer: https://youtu.be/VquVNYi_Z9U
+## What PHX is
 
-### Tag Burst Provisioning - Icarus Phase;
-+30k Tags Provisioning , in a minute: https://youtu.be/Ci-ngGc4NF8
+PHX is:
 
+- a topology-driven runtime generator
+- a deploy planner with explicit execution modes
+- a governed reconciliation workflow for runtime drift
+- a historian-aware verification layer
+- a deploy journal and snapshot system for replay, restore, and audit
 
-## The Engineering Problem
+PHX is not:
 
-Traditional SCADA deployments often suffer from:
-*   **Weakly validated states** (false-positive deployment success)
-*   **Manual scaffolding** preventing repeatable teardown/rebuild cycles
-*   **High Time-to-Value (TTV)** due to repetitive engineering effort
+- a PLC control engine
+- a safety system
+- a blind overwrite deployer
+- a replacement for engineering review
+- a generic dashboard builder
+- a claim of fully autonomous brownfield reconciliation
 
-PHX IIoT explores a state-machine driven deployment model, testing whether SCADA foundations can be treated as reproducible, software-defined infrastructure. 
+## Why this exists
 
-The core rule is:
-> **`Same input → same generated runtime`**
+Industrial runtime delivery still depends heavily on:
 
----
+- manual scaffolding
+- copy-paste engineering
+- backup/restore habits
+- runtime drift across plants
+- historian inconsistencies
+- undocumented deployment intent
 
-## Conceptual Capabilities
+These patterns can work, but they make repeatability, controlled recovery, and multi-site standardization harder than they should be.
 
-### 1. Deterministic Deployment Lifecycle
-Deployments follow a strict state progression for traceability. Supported capabilities and execution modes include:
-*   Fresh bootstrap deploy
-*   Idempotent no-op redeploy
-*   Drift corrective reconcile
-*   Wipe / reset lifecycle
-*   Restore from deploy journal
-*   CRC-based state detection
-*   Topology diffing
-*   Historian readiness gating
-*   Partial rollback handling
-*   Locking / run ownership control
-*   Throughput checkpoints & metrics
+PHX explores a narrower question:
 
-### 2. Validation & Drift Observation
-The system evaluates deployments against structural invariants:
-*   **Topology integrity:** No orphans, no circular dependencies.
-*   **CRC-based validation:** Source integrity verification.
-*   **Historian schema consistency:** Ensuring database state matches expectations.
-*   **Mapping completeness:** `runtime` ↔ `OPC` ↔ `tags`
+Can an Ignition runtime foundation be treated more like software-defined industrial infrastructure, where the source definition, observed runtime state, and governance policy are all visible before applying change?
 
-### 3. CRC Modeling & Idempotency
-A structural CRC is computed from the manifest. 
+## Concept videos
 
-*   **Fast No-Op Execution:** If `manifest_crc == runtime_crc`, execution is skipped immediately. This enables deterministic, idempotent redeployment without rewriting or interrupting existing runtime state.
+#### Full Topology Rebuild — Phoenix Phase
 
-### 4. Historian-Aware Handshakes
-The system models historian behavior as an asynchronous subsystem:
-*   Bootstrap delay handling
-*   Quiet window validation
-*   Deferred commit states
-*   Partial readiness detection
+- Rebuild Provisioning Layer: https://youtu.be/BU7qWBIWs_4
 
----
+- Rebuild Provisioning and Reconciliation Layer: https://youtu.be/VquVNYi_Z9U
 
-## Output Artifacts & Immutable Journaling
+#### Rapid, High-Scale Foundation — Icarus Phase
 
-All state transitions are stored in an execution log (`PHX_DEPLOY_LOG`), enabling full replayability and auditability.
+- Tag Burst Provisioning: https://youtu.be/Ci-ngGc4NF8
 
-*Example Schema:*
+## Architecture at a glance
 
-| run_id | action | machine_count | tag_count | manifest_crc | runtime_crc | execution_mode | status |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| `RUN_437` | `DEPLOY` | 10 | 430 | `18DB897E` | `18DB897E` | Full Apply | `DONE` |
-| `RUN_551` | `NO_OP` | 10 | 0 | `18DB897E` | `18DB897E` | No-Op | `DEFERRED` |
+```mermaid
+flowchart LR
+    A[CSV or Git source] --> B[Canonical manifest]
+    B --> C[Plan engine]
+    R[Observed runtime state] --> C
+    C --> D{Execution mode}
+    D -->|No-Op Reapply| E[Fast verification]
+    D -->|Selective or Scoped Reconcile| F[Bounded apply]
+    D -->|Full Apply| F
+    D -->|Rollback Execute or Journal Restore| F
+    F --> G[Historian and schema verification]
+    E --> G
+    G --> H[Deploy run journal]
+    G --> I[Deploy snapshots]
+    H --> J[Audit, restore, replay]
+    I --> J
+```
 
----
+## Core principle
 
-## Engineering Researchs (Controlled Chaos Experiments)
+```text
+Same source definition
++ same observed runtime state
++ same governance policy
+= same governed runtime result
+```
 
-This project maps system behavior under increasing OT/IT stress conditions:
+The purpose is not only to generate tags faster.
 
-* **[DONE] Test #1 — Full Topology Rebuild** <br>
-  Idempotency proof, one-click rebuild in seconds, hot-patching.  *(Phoenix Phase)*
+The purpose is to make runtime foundation changes more explicit, repeatable, reviewable, and recoverable.
 
-* **[DONE] Test #2 — Tag Burst Provisioning** <br>
-  Historian write degradation confirmed at ~2,700 tags/sec, ~30k tags.  *(Icarus Phase)*
+## Supported capabilities
 
-* **[PLANNED] Test #3 — Subscription Storm** <br>
-  Gateway memory collapse threshold under mass OPC UA subscriptions.  *(Connection Storm Phase)*
+### 1. Deterministic manifest and identity layer
 
-* **[PLANNED] Test #4 — DB Overweight (Max IO Scope)** <br>
-  Maximum database writes with simulated disk errors.  *(Atlas Phase)*
+- Canonical manifest CRC and source checksums
+- Stable asset identity from explicit GUIDs or path + OPC fingerprints
+- Runtime planning before apply
+- Last-deploy baseline retention for replayable comparisons
 
-* **[PLANNED] Test #5 — Connection Loss Matrix** <br>
-  Every failure combination: partial loss, flapping, timeout cascades.  *(Hades Phase)*
+### 2. Execution modes
 
-* **[PLANNED] Test #6 — Machine to Capital Impact Tracing** <br>
-  Data path from machine sensor to financial loss number.  *(Daedalus Phase)*
+PHX models deploy behavior through explicit execution modes, including:
 
-* **[VISION] Test #7 — Predictive Intelligence Engine** <br>
-  ML layer on top of the IaC stack.  *(Artemis Phase)*
+- Full Apply
+- No-Op Reapply
+- Idempotent Reconcile
+- Selective Reconcile
+- Scoped Reconcile
+- Rollback Execute
+- Journal Restore
+- Exception Reconcile for governed exception paths
 
-* **[VISION] Test #8 — Built-In PLC Simulator & Playground** <br>
-  Embedded PLC simulation environment for CI loops.  *(Prometheus Phase)*
-  
----
+### 3. Governed reconciliation
 
-## Formal Execution Benchmarks
+When runtime and definition diverge, PHX can intentionally stop the apply path and require a typed decision instead of silently overwriting the runtime.
 
-*Environment: Ignition 8.3.2 / JVM constrained runtime (M1 Pro / 2GB heap)*
+Supported decision patterns include:
 
-| Scale Target | Runtime Size | Deployment Time | Peak Throughput | Observation |
-| :--- | :--- | :--- | :--- | :--- |
-| **Small Matrix** | ~1,000 tags | 18.6 sec | ~2,700 tags/sec | Stable |
-| **Single Site** | ~10,000 tags | 24.5 sec | ~2,700 tags/sec | Stable |
-| **Stress Point** | ~30,000+ tags | 28.7 sec | ~2,700 tags/sec | GC pressure visible (Unsustainable at ~35k+ tags) |
-| **Limit Point** | ~100,000+ tags | *TBD* | *TBD* | GC pressure fault (Gateway Restart) |
+- Revert runtime to definition
+- Promote runtime to definition
+- Keep as exception
+- Defer decision and preserve pending state
+
+This is deliberate.
+
+`BLOCKED` is treated as a valid orchestration state, not just an unhandled failure.
+
+### 4. Historian-aware verification
+
+PHX does not stop at tag creation.
+
+The verification path checks:
+
+- topology invariants
+- management schema readiness
+- historian runtime vs expected footprint
+- unmapped or legacy historian residue
+- source integrity state before declaring a run ready
+
+### 5. Replayable deploy journal
+
+Deploys are tracked as orchestration runs with explicit states such as:
+
+- `PLANNED`
+- `PREPARE`
+- `APPLYING`
+- `VERIFYING`
+- `READY`
+- `PARTIAL`
+- `BLOCKED`
+- `DEFERRED`
+- `FAILED`
+- `ROLLING_BACK`
+- `ROLLED_BACK`
+
+Each run can carry source metadata, rollback ancestry, contract status, invariant summaries, and timing data.
+
+### 6. Snapshot-backed recovery and audit
+
+PHX persists run snapshots such as:
+
+- `SOURCE_ROWS`
+- `PRE_APPLY_RUNTIME`
+- `FAST_NOOP_SUMMARY`
+- `POST_APPLY_SUMMARY`
+
+This allows headless flows and UI flows to speak the same deploy language.
+
+### 7. Source governance
+
+PHX supports controlled source behavior across different deployment modes:
+
+- Git-managed flows can enforce source-of-truth locking
+- CSV-driven flows are intentionally operator-switchable
+- Rollback paths can bypass source lock when needed for recovery
+
+## Minimum viable SCADA/MES runtime foundation
+
+Beyond orchestration, PHX already includes the core components of a minimum viable Ignition-based SCADA/MES runtime foundation:
+
+- generated ISA-95 equipment hierarchy and OPC-connected runtime tags
+- historian-backed time-series collection and trend queries
+- alarm generation, acknowledge, and clear workflows
+- asset-level KPI and OEE calculation
+- shift-level aggregation and summary reporting
+- Perspective dashboards for plant overview, trends, analytics, and shift views
+- controlled deploy, wipe, restore, and reconciliation workflows with auditability
+
+Taken together, this makes PHX more than a provisioning engine.
+
+Within the current PHX build scope, it already functions as a minimum viable Ignition-based SCADA/MES runtime foundation for machine monitoring, historian-backed reporting, alarm handling, KPI tracking, and shift-aware operational visibility.
+
+## Verified evidence in the current PHX build
+
+The current evidence is intentionally narrow and measured.
+
+- Fresh deploy observed in the current Perspective development client on 2026-04-26: 10 assets, 430 tags, 31.4 seconds
+- Drift-corrective apply observed in the same session: 10 assets, 430 tags, 12.1 seconds
+- Determinism proof: a 20-asset manifest was generated 3 times with identical CRC32 `1C2C3848` and identical SHA-256 `AC71B07BF45B1C5C44CB15C6F0342DF56672EA84F7AD9D9E606353E119436B26`
+
+The goal of the repo is not to inflate scale claims.
+
+The goal is to show that orchestration behavior can be repeatable, explainable, and inspectable within a controlled Ignition environment.
+
+## Brownfield position
+
+For brownfield systems, PHX should be read conservatively.
+
+The near-term value is not automatic self-healing SCADA.
+
+The safer promise is:
+
+- read-only runtime inventory
+- candidate manifest generation
+- semantic drift visibility
+- governed migration or reconciliation planning before mutation
+
+That makes PHX useful even before full write-path authority is acceptable.
+
+## Engineering Trials (Controlled Chaos Experiments)
+
+PHX also includes an engineering trial track designed to map system behavior under increasing OT/IT stress, drift pressure, and recovery complexity.
+
+This section is intentionally broader than the verified evidence section above: it includes completed trials, planned failure research, and longer-horizon vision items.
+
+The purpose of these trials is not only performance testing. It is to make failure modes, scale limits, recovery behavior, and orchestration boundaries visible.
+
+- **[DONE] Test #1 — Full Topology Rebuild**  
+  Idempotency proof, one-click rebuild in seconds, hot-patching. *(Phoenix Phase)*
+
+- **[DONE] Test #2 — Tag Burst Provisioning**  
+  Observed historian write degradation around ~2,700 tags/sec during ~30k tag provisioning tests. *(Icarus Phase)*
+
+- **[PLANNED] Test #3 — Subscription Storm**  
+  Gateway memory collapse threshold under mass OPC UA subscriptions. *(Connection Storm Phase)*
+
+- **[PLANNED] Test #4 — DB Overweight (Max IO Scope)**  
+  Maximum database writes with simulated disk errors. *(Atlas Phase)*
+
+- **[PLANNED] Test #5 — Connection Loss Matrix**  
+  Every failure combination: partial loss, flapping, timeout cascades. *(Hades Phase)*
+
+- **[PLANNED] Test #6 — Machine to Capital Impact Tracing**  
+  Data path from machine sensor to financial loss number. *(Daedalus Phase)*
+
+- **[VISION] Test #7 — Predictive Intelligence Engine**  
+  ML layer on top of the IaC stack. *(Artemis Phase)*
+
+- **[VISION] Test #8 — Built-In PLC Simulator & Playground**  
+  Embedded PLC simulation environment for CI loops. *(Prometheus Phase)*
+
+## What PHX does not claim
+
+PHX does not currently claim:
+
+- full plant autonomy
+- replacement of SCADA engineering judgment
+- guaranteed failure-atomic rollback under every fault profile
+- historian continuity guarantees under all startup and wipe conditions
+- replacement of control, alarm, or safety authority
+- one-click brownfield write-back without review
+
+## Roadmap themes
+
+- richer brownfield runtime observability
+- stronger policy and approval workflows
+- broader restore and checkpoint coverage
+- clearer topology and historian governance visualization
+- safer multi-source model governance
+- higher-confidence headless validation flows
+
+## Summary
+
+PHX IIoT is not trying to be "SCADA, but prettier."
+
+It is a runtime orchestration and governance layer that brings planning, replay, audit, bounded drift correction, and controlled state convergence into Ignition-based industrial foundations.
+
+Kubernetes can reconcile containers.  
+PHX brings governed runtime reconciliation to SCADA/MES foundations.
