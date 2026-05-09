@@ -32,6 +32,9 @@ PHX is not:
 - a generic dashboard builder
 - a claim of fully autonomous brownfield reconciliation
 
+#### * MES-aligned, SCADA/MES-capable Viable Runtime Foundation
+##### * The value is not just rapid provisioning, but the ability to regenerate and revalidate a known runtime foundation with journaled evidence instead of relying on manual reconstruction.
+
 ## Why this exists
 
 Industrial runtime delivery still depends heavily on:
