@@ -1,5 +1,4 @@
-# PHX IIoT
-## Runtime Orchestration Layer for Ignition
+# PHX IIoT - Runtime Orchestration Layer for Ignition
 
 ![Platform](https://img.shields.io/badge/platform-Ignition-blue)
 ![Mode](https://img.shields.io/badge/runtime-governed%20reconciliation-0a7f5a)
