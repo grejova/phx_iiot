@@ -18,9 +18,10 @@ It enables deterministic provisioning, topology-driven deployment, historian-awa
 
 ## Repository Map
 
-- `_v0.0_PROOF_MEDIA/` — screenshots, diagrams, architecture visuals, and runtime evidence images
+- `_v0.0_PROOF_MEDIA/` — PoC screenshots, diagrams, architecture visuals, and runtime evidence images
 - `_v0.0_EXAMPLE_PLANTS/` — safe public topology manifest examples
 - `_v0.1_FIELD_APPLICATION_01_0526_PLANNED/` — planned read-only brownfield validation brief
+- `.github/` — security, contribution, issue-template, and rights-boundary notes
 
 ## What PHX is
 
@@ -41,8 +42,11 @@ PHX is not:
 - a generic dashboard builder
 - a claim of fully autonomous brownfield reconciliation
 
-#### * MES-aligned, SCADA/MES-capable Viable Runtime Foundation
-##### * The value is not just rapid provisioning, but the ability to regenerate and revalidate a known runtime foundation with journaled evidence instead of relying on manual reconstruction.
+## SCADA/MES-capable runtime foundation
+
+PHX is MES-aligned and SCADA/MES-capable within the current controlled build scope.
+
+The value is not just rapid provisioning. The value is the ability to regenerate and revalidate a known runtime foundation with journaled evidence instead of relying on manual reconstruction.
 
 ## Why this exists
 
@@ -63,13 +67,12 @@ Can an Ignition runtime foundation be treated more like software-defined industr
 
 ## Concept videos
 
-#### Full Topology Rebuild — Phoenix Phase
+### Full Topology Rebuild — Phoenix Phase
 
 - Rebuild Provisioning Layer: https://youtu.be/BU7qWBIWs_4
-
 - Rebuild Provisioning and Reconciliation Layer: https://youtu.be/VquVNYi_Z9U
 
-#### Rapid, High-Scale Foundation — Icarus Phase
+### Rapid, High-Scale Foundation — Icarus Phase
 
 - Tag Burst Provisioning: https://youtu.be/Ci-ngGc4NF8
 
@@ -194,7 +197,7 @@ PHX supports controlled source behavior across different deployment modes:
 
 ## Minimum viable SCADA/MES runtime foundation
 
-Beyond orchestration, PHX already includes the core components of a minimum viable Ignition-based SCADA/MES runtime foundation:
+Beyond orchestration, PHX already includes the core components of a minimum viable Ignition-based SCADA/MES runtime foundation within the current controlled build scope:
 
 - generated ISA-95 equipment hierarchy and OPC-connected runtime tags
 - historian-backed time-series collection and trend queries
@@ -206,7 +209,7 @@ Beyond orchestration, PHX already includes the core components of a minimum viab
 
 Taken together, this makes PHX more than a provisioning engine.
 
-Within the current PHX build scope, it already functions as a minimum viable Ignition-based SCADA/MES runtime foundation for machine monitoring, historian-backed reporting, alarm handling, KPI tracking, and shift-aware operational visibility.
+Within the current PHX build scope, it functions as a minimum viable Ignition-based SCADA/MES runtime foundation for machine monitoring, historian-backed reporting, alarm handling, KPI tracking, and shift-aware operational visibility.
 
 ## Verified evidence in the current PHX build
 
@@ -235,37 +238,45 @@ The safer promise is:
 
 That makes PHX useful even before full write-path authority is acceptable.
 
-## Engineering Trials (Controlled Chaos Experiments)
+## Engineering Trials: Controlled Chaos Experiments
 
 PHX also includes an engineering trial track designed to map system behavior under increasing OT/IT stress, drift pressure, and recovery complexity.
 
-This section is intentionally broader than the verified evidence section above: it includes completed trials, planned failure research, and longer-horizon vision items.
+This section is intentionally broader than the verified evidence section above. It includes completed trials, planned failure research, and longer-horizon vision items.
 
 The purpose of these trials is not only performance testing. It is to make failure modes, scale limits, recovery behavior, and orchestration boundaries visible.
 
 - **[DONE] Test #1 — Full Topology Rebuild**  
-  Idempotency proof, one-click rebuild in seconds, hot-patching. *(Phoenix Phase)*
+  Idempotency proof, one-click rebuild in seconds, hot-patching.  
+  *(Phoenix Phase)*
 
 - **[DONE] Test #2 — Tag Burst Provisioning**  
-  Observed historian write degradation around ~2,700 tags/sec during ~30k tag provisioning tests. *(Icarus Phase)*
+  Observed historian write degradation around ~2,700 tags/sec during ~30k tag provisioning tests.  
+  *(Icarus Phase)*
 
 - **[PLANNED] Test #3 — Subscription Storm**  
-  Gateway memory collapse threshold under mass OPC UA subscriptions. *(Connection Storm Phase)*
+  Gateway memory collapse threshold under mass OPC UA subscriptions.  
+  *(Connection Storm Phase)*
 
-- **[PLANNED] Test #4 — DB Overweight (Max IO Scope)**  
-  Maximum database writes with simulated disk errors. *(Atlas Phase)*
+- **[PLANNED] Test #4 — DB Overweight / Max IO Scope**  
+  Maximum database writes with simulated disk errors.  
+  *(Atlas Phase)*
 
 - **[PLANNED] Test #5 — Connection Loss Matrix**  
-  Every failure combination: partial loss, flapping, timeout cascades. *(Hades Phase)*
+  Every failure combination: partial loss, flapping, timeout cascades.  
+  *(Hades Phase)*
 
 - **[PLANNED] Test #6 — Machine to Capital Impact Tracing**  
-  Data path from machine sensor to financial loss number. *(Daedalus Phase)*
+  Data path from machine sensor to financial loss number.  
+  *(Daedalus Phase)*
 
 - **[VISION] Test #7 — Predictive Intelligence Engine**  
-  ML layer on top of the IaC stack. *(Artemis Phase)*
+  ML layer on top of the IaC stack.  
+  *(Artemis Phase)*
 
-- **[VISION] Test #8 — Built-In PLC Simulator & Playground**  
-  Embedded PLC simulation environment for CI loops. *(Prometheus Phase)*
+- **[VISION] Test #8 — Built-In PLC Simulator and Playground**  
+  Embedded PLC simulation environment for CI loops.  
+  *(Prometheus Phase)*
 
 ## What PHX does not claim
 
