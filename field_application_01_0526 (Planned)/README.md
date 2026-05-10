@@ -110,10 +110,6 @@ This stage prepares the reusable field-side library required for a standard PHX 
 
 The purpose is to create the minimum reusable foundation before entering the real plant discovery phase: simulated manufacturing assets, sample OPC-UA structures, topology templates, dashboard templates, reusable setup scripts, and a field discovery checklist.
 
-The measured duration of a standard PHX IIoT setup should start only after this stage is completed.
-
-In other words, Stage 0.0 and Stage 0.1 prepare the platform and reusable library. The actual PHX IIoT field pilot begins at **Stage 1 — Field Discovery**.
-
 Expected output:
 
 - Simulated manufacturing asset model
@@ -124,6 +120,10 @@ Expected output:
 - Field discovery checklist
 - Baseline reusable setup library
 - Prepared standard setup package for Stage 1
+
+The measured duration of a standard PHX IIoT setup should start only after this stage is completed.
+
+In other words, Stage 0.0 and Stage 0.1 prepare the platform and reusable library. The actual PHX IIoT field pilot begins at **Stage 1 — Field Discovery**.
 
 ---
 
