@@ -1,7 +1,19 @@
-# Keep documentation and proof media out of GitHub language statistics
-*.md linguist-documentation
-PROOF_MEDIA/** linguist-vendored
+# This repository is a public technical evidence/documentation repository, not a code repository.
 
-# Make public manifest examples visible as the main technical surface
-PLANT_EXAMPLES/**/*.csv linguist-detectable
-*.csv linguist-detectable
+# Treat documentation and public evidence files as documentation, not language surface.
+*.md linguist-documentation
+*.csv linguist-documentation
+*.txt linguist-documentation
+
+# Treat proof media as non-language repository assets.
+PROOF_MEDIA/** linguist-vendored
+*.png linguist-vendored
+*.jpg linguist-vendored
+*.jpeg linguist-vendored
+*.gif linguist-vendored
+*.webp linguist-vendored
+
+# Treat GitHub templates and metadata as documentation.
+.github/** linguist-documentation
+FIELD_APPLICATION_01_0526_PLANNED/** linguist-documentation
+PLANT_EXAMPLES/** linguist-documentation
