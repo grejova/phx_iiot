@@ -1,0 +1,7 @@
+# Keep documentation and proof media out of GitHub language statistics
+*.md linguist-documentation
+PROOF_MEDIA/** linguist-vendored
+
+# Make public manifest examples visible as the main technical surface
+PLANT_EXAMPLES/**/*.csv linguist-detectable
+*.csv linguist-detectable
