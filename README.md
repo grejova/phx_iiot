@@ -21,8 +21,6 @@ It enables deterministic provisioning, topology-driven deployment, historian-awa
 - `PROOF_MEDIA/` — screenshots, diagrams, architecture visuals, and runtime evidence images
 - `PLANT_EXAMPLES/` — safe public topology manifest examples
 - `FIELD_APPLICATION_01_0526_PLANNED/` — planned read-only brownfield validation brief
-- `REPOSITORY_SCOPE.md` — public/private boundary of this repository
-- `NOTICE.md` — usage and rights boundary for public materials
 
 ## What PHX is
 
