@@ -18,9 +18,9 @@ It enables deterministic provisioning, topology-driven deployment, historian-awa
 
 ## Repository Map
 
-- `PROOF_MEDIA/` — screenshots, diagrams, architecture visuals, and runtime evidence images
-- `EXAMPLE_PLANTS/` — safe public topology manifest examples
-- `FIELD_APPLICATION_01_0526_PLANNED/` — planned read-only brownfield validation brief
+- `_v0_PROOF_MEDIA/` — screenshots, diagrams, architecture visuals, and runtime evidence images
+- `_v0_EXAMPLE_PLANTS/` — safe public topology manifest examples
+- `_v1_FIELD_APPLICATION_01_0526_PLANNED/` — planned read-only brownfield validation brief
 
 ## What PHX is
 
