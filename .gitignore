@@ -1,3 +1,32 @@
-
 # macOS
 .DS_Store
+
+# Local/editor artifacts
+*.tmp
+*.bak
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Local environment / secrets
+.env
+*.key
+*.pem
+*.crt
+
+# Runtime / export artifacts
+*.log
+*.zip
+*.tar
+*.gz
+*.gatewaybackup
+*.gwbk
+*.db
+*.sqlite
+*.sqlite3
+
+# Large raw media exports
+*.mov
+*.mp4
+*.avi

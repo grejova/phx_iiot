@@ -1,5 +1,8 @@
 # PHX IIoT - Runtime Orchestration Layer for Ignition
 
+> This is a public technical evidence repository.  
+> The core PHX deployment engine, Ignition gateway scripts, and private orchestration logic are not published here.
+
 ![Platform](https://img.shields.io/badge/platform-Ignition-E63210)
 ![Mode](https://img.shields.io/badge/runtime-governed%20reconciliation-0a7f5a)
 ![Source](https://img.shields.io/badge/source-CSV%20%7C%20GIT-0E99C4)
@@ -12,6 +15,14 @@ Declarative runtime provisioning, governed reconciliation, and replayable deploy
 PHX IIoT is a runtime orchestration layer for Inductive Automation Ignition.
 
 It enables deterministic provisioning, topology-driven deployment, historian-aware verification, governed runtime drift handling, and replayable deployment state from a structured source definition.
+
+## Repository Map
+
+- `PROOF_MEDIA/` — screenshots, diagrams, architecture visuals, and runtime evidence images
+- `PLANT_EXAMPLES/` — safe public topology manifest examples
+- `FIELD_APPLICATION_01_0526_PLANNED/` — planned read-only brownfield validation brief
+- `REPOSITORY_SCOPE.md` — public/private boundary of this repository
+- `NOTICE.md` — usage and rights boundary for public materials
 
 ## What PHX is
 
