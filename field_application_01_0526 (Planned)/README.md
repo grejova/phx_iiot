@@ -63,37 +63,76 @@ Preferred inputs:
 
 ## Pilot Stages
 
-### Stage 0.0 — Pre-Field Platform Readiness (Current : 10 May 2026)
+### Stage 0.0 — PHX Deploy API Preparation  
+**Status:** Current — 10 May 2026  
+**Phase Type:** Pre-field platform preparation
 
 The original PHX IIoT structure was built as a monolithic PoC for lab validation.
 
-For the field pilot, the platform will be prepared with cleaner separation between UI actions, backend logic, and runtime generation flow.
+For the field pilot, the platform will be reorganized around a cleaner separation between the local Ignition runtime, deployment logic, and external orchestration services.
+
+In this stage, an external **PHX Deploy API** system will be prepared outside the plant environment. Its purpose is to keep deployment logic, runtime generation methods, validation routines, and controlled backend operations outside the local Ignition project as much as possible.
+
+The initial external API interface is defined as:
+
+- **System Name:** PHX Deploy API
+- **Version:** 1.0.0
+- **Specification:** OAS 3.1
+- **OpenAPI Schema Endpoint:** `/openapi.json`
+- **Interface Role:** API-key-protected secure external interface for controlled PHX deployment operations
+
+The PHX Deploy API is expected to expose only controlled and predefined methods. Access will be limited through known API keys, known method names, validated method inputs, and expected response structures.
+
+In practical terms, the PHX Deploy API acts as a secure external-world interface between the local PHX runtime environment and the controlled deployment/orchestration logic. It is not intended to expose unrestricted plant data or uncontrolled runtime operations.
+
+This stage is not part of the measured field pilot execution time. It is a platform hardening and preparation step required before PHX IIoT can be tested in a more realistic brownfield setting.
 
 Expected output:
 
+- External PHX Deploy API preparation
+- PHX Deploy API versioned as 1.0.0
+- OAS 3.1-compatible OpenAPI schema exposed through `/openapi.json`
+- API-key-protected secure external interface
+- Cleaner separation between UI actions, backend logic, and runtime generation
+- API-key-based controlled access model
+- Predefined deployment and validation methods
+- Input validation and expected output structure
 - Safer pre-field platform structure
 - Baseline deploy/redeploy test
 - Deployment log and result reporting structure
 
 ---
 
-### Stage 0.1 — Field Work Preparation
+### Stage 0.1 — Field Library and Standard Setup Preparation  
+**Phase Type:** Pre-field library preparation
 
-Prepare simulated manufacturing assets, sample OPC-UA structures, topology templates, dashboard templates, and field discovery checklist before the site visit.
+This stage prepares the reusable field-side library required for a standard PHX IIoT setup.
+
+The purpose is to create the minimum reusable foundation before entering the real plant discovery phase: simulated manufacturing assets, sample OPC-UA structures, topology templates, dashboard templates, reusable setup scripts, and a field discovery checklist.
+
+The measured duration of a standard PHX IIoT setup should start only after this stage is completed.
+
+In other words, Stage 0.0 and Stage 0.1 prepare the platform and reusable library. The actual PHX IIoT field pilot begins at **Stage 1 — Field Discovery**.
 
 Expected output:
 
 - Simulated manufacturing asset model
 - Example topology manifest
 - Sample OPC-UA signal map
+- Reusable topology and signal-mapping templates
 - Initial dashboard/view templates
 - Field discovery checklist
+- Baseline reusable setup library
+- Prepared standard setup package for Stage 1
 
 ---
 
-### Stage 1 — Field Discovery
+### Stage 1 — Field Discovery  
+**Phase Type:** Start of actual PHX IIoT field pilot
 
 Understand the real plant structure and available read-only data sources.
+
+This is the first stage where the PHX IIoT pilot should be considered as practically starting in the field.
 
 Expected output:
 
@@ -113,6 +152,15 @@ Generate the read-only Ignition runtime foundation from the field-derived topolo
 
 Details will be added based on Stage 0 and Stage 1 findings.
 
+Expected output:
+
+- Generated read-only Ignition runtime foundation
+- Runtime structure based on the field-derived topology manifest
+- Read-only tag and signal structure
+- Basic runtime verification
+- Deployment log and generation result
+- Initial consistency check between manifest and generated runtime
+
 ---
 
 ### Stage 3 — Observability and Efficiency Tracing
@@ -120,6 +168,54 @@ Details will be added based on Stage 0 and Stage 1 findings.
 Evaluate which basic status, trend, and efficiency-related views can be created from available field data.
 
 Details will be added based on field discovery results.
+
+Expected output:
+
+- Basic asset status views
+- Basic trend views
+- Initial efficiency-related signal visibility
+- Available / missing signal classification
+- Practical observability limits
+- Gap report for later instrumentation or integration
+
+---
+
+## PHX Deploy API Initial Definition
+
+The PHX Deploy API is the controlled external interface prepared for PHX IIoT deployment and runtime foundation operations.
+
+It is designed as an API-key-protected external-world interface, exposing only predefined deployment, validation, and runtime-generation methods.
+
+Initial API definition:
+
+| Item | Value |
+|---|---|
+| API Name | PHX Deploy API |
+| Version | 1.0.0 |
+| API Specification | OAS 3.1 |
+| OpenAPI Schema | `/openapi.json` |
+| Security Model | API-Key protected |
+| Interface Purpose | Secure external interface for controlled PHX deployment operations |
+
+The API is expected to support only known methods, known inputs, validated request structures, and expected response formats.
+
+The goal is to keep sensitive deployment logic and backend orchestration outside the local Ignition UI layer while minimizing unnecessary data exposure.
+
+---
+
+## Field Pilot Timing Clarification
+
+Stage 0.0 and Stage 0.1 are pre-field preparation stages.
+
+They are required to prepare the PHX Deploy API, reusable field library, setup templates, simulated assets, and deployment structure before a realistic brownfield pilot can begin.
+
+The measured duration of a standard PHX IIoT field setup should start only after Stage 0.1 is completed.
+
+Therefore, the actual PHX IIoT field pilot starts at:
+
+**Stage 1 — Field Discovery**
+
+This distinction is important because Stage 0.0 and Stage 0.1 represent platform preparation and reusable library development, not the actual field execution time.
 
 ---
 
@@ -140,6 +236,14 @@ Details will be added based on field discovery results.
 
 | Measurement | Result |
 |---|---|
+| Pre-field preparation excluded from measured setup time |  |
+| PHX Deploy API prepared before field pilot |  |
+| PHX Deploy API version | 1.0.0 |
+| PHX Deploy API specification | OAS 3.1 |
+| PHX Deploy API schema endpoint | `/openapi.json` |
+| PHX Deploy API security model | API-Key protected |
+| Reusable field library prepared before Stage 1 |  |
+| Actual field pilot start stage | Stage 1 |
 | Number of mapped assets |  |
 | Number of mapped machines |  |
 | Number of mapped lines |  |
@@ -166,3 +270,5 @@ Details will be added based on field discovery results.
 PHX IIoT is being tested as a read-only, repeatable, topology-driven observability foundation for brownfield manufacturing environments.
 
 The goal is to understand what kind of digital foundation is required before practical efficiency visibility can be built from real field data.
+
+The actual field pilot begins at Stage 1. Stage 0.0 and Stage 0.1 are preparation stages for the external PHX Deploy API, reusable field library, and standard setup foundation.
