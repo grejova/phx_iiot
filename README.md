@@ -1,8 +1,8 @@
 # PHX IIoT - Runtime Orchestration Layer for Ignition
 
-![Platform](https://img.shields.io/badge/platform-Ignition-blue)
+![Platform](https://img.shields.io/badge/platform-Ignition-E63210)
 ![Mode](https://img.shields.io/badge/runtime-governed%20reconciliation-0a7f5a)
-![Source](https://img.shields.io/badge/source-CSV%20%7C%20GIT-6b7280)
+![Source](https://img.shields.io/badge/source-CSV%20%7C%20GIT-0E99C4)
 ![Scope](https://img.shields.io/badge/scope-SCADA%2FMES%20foundation-2563eb)
 
 Declarative runtime provisioning, governed reconciliation, and replayable deployment state for Ignition-based SCADA/MES foundations.
