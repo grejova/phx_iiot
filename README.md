@@ -298,5 +298,5 @@ PHX IIoT is not trying to be "SCADA, but prettier."
 It is a runtime orchestration and governance layer that brings planning, replay, audit, bounded drift correction, and controlled state convergence into Ignition-based industrial foundations.
 
 Kubernetes can reconcile containers.
-PHX can reconcile industrial meaning in SCADA runtimes.
 
+PHX can reconcile industrial meaning in SCADA runtimes.
