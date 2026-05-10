@@ -1,4 +1,4 @@
-# Plant Examples
+# Example Plants
 
 This folder contains safe public topology manifest examples used to demonstrate PHX IIoT source-defined runtime provisioning behavior.
 
