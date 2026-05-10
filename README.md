@@ -286,3 +286,17 @@ It is a runtime orchestration and governance layer that brings planning, replay,
 
 Kubernetes can reconcile containers.  
 PHX brings governed runtime reconciliation to SCADA/MES foundations.
+
+## PHX Role Impact
+
+PHX plays a combined industrial runtime role similar to **Kubernetes + Terraform + Prometheus + Grafana**, adapted to Ignition-based SCADA/MES foundations.
+
+This is not a direct replacement claim. The comparison is about role coverage:
+
+- **Terraform-like:** source-defined provisioning and reproducible runtime materialization
+- **Kubernetes-like:** runtime state convergence, reconciliation, and controlled recovery
+- **Prometheus-like:** runtime verification signals, operational evidence, and state observability
+- **Grafana-like:** topology-aware runtime surfaces and visual operational context
+
+In short, PHX acts as a combined provisioning, orchestration, verification, and observability layer for Ignition runtime foundations.
+
