@@ -278,15 +278,6 @@ PHX does not currently claim:
 - safer multi-source model governance
 - higher-confidence headless validation flows
 
-## Summary
-
-PHX IIoT is not trying to be "SCADA, but prettier."
-
-It is a runtime orchestration and governance layer that brings planning, replay, audit, bounded drift correction, and controlled state convergence into Ignition-based industrial foundations.
-
-Kubernetes can reconcile containers.  
-PHX brings governed runtime reconciliation to SCADA/MES foundations.
-
 ## PHX Role Impact
 
 PHX plays a combined industrial runtime role similar to **Kubernetes + Terraform + Prometheus + Grafana**, adapted to Ignition-based SCADA/MES foundations.
@@ -299,4 +290,13 @@ This is not a direct replacement claim. The comparison is about role coverage:
 - **Grafana-like:** topology-aware runtime surfaces and visual operational context
 
 In short, PHX acts as a combined provisioning, orchestration, verification, and observability layer for Ignition runtime foundations.
+
+## Summary
+
+PHX IIoT is not trying to be "SCADA, but prettier."
+
+It is a runtime orchestration and governance layer that brings planning, replay, audit, bounded drift correction, and controlled state convergence into Ignition-based industrial foundations.
+
+Kubernetes can reconcile containers.  
+PHX brings governed runtime reconciliation to SCADA/MES foundations.
 
