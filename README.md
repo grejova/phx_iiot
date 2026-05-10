@@ -299,4 +299,4 @@ It is a runtime orchestration and governance layer that brings planning, replay,
 
 > **"Kubernetes can reconcile containers."**
 >
-> **"PHX can reconcile industrial meaning in SCADA runtimes."**
+> **"PHX can reconcile industrial meaning with profitability and ROI in SCADA runtimes."**
