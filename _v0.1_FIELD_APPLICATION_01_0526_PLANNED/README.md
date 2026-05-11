@@ -87,6 +87,36 @@ In practical terms, the PHX Deploy API acts as a secure external-world interface
 
 This stage is not part of the measured field pilot execution time. It is a platform hardening and preparation step required before PHX IIoT can be tested in a more realistic brownfield setting.
 
+### Stage 0.0 Addition — Runtime UI Context Rehydration Preparation
+
+As part of Stage 0.0, PHX IIoT will also prepare a controlled Runtime UI Context rehydration process for new Ignition Perspective environments.
+
+The purpose of this step is to start from an empty Ignition Perspective canvas and recreate the required PHX Runtime UI context structures through a predefined Script Library package. Instead of manually rebuilding the same Perspective view foundation for every new environment, the PHX field-side library will be used to recreate the standard runtime UI context consistently.
+
+The current planned Script Library context includes:
+
+  * `PHX_Deploy_API_Client`
+  * `PHX_Runtime_Context`
+  * `PHX_Runtime_Context_1`
+  * `PHX_Runtime_Context_Components`
+  * `PHX_Runtime_Context_Ignite`
+  * `PHX_Runtime_Context_Plant_Overview`
+  * `PHX_Runtime_Context_System_Health`
+  * `PHX_Runtime_Context_Trend_Tracking`
+  * `_ConPar`
+
+These libraries are intended to support the repeatable creation of PHX runtime surfaces such as deploy interaction context, plant overview context, system health context, trend tracking context, ignition/runtime initialization context, shared component helpers, and common parameter/context helpers.
+
+In practical terms, this means that a new Ignition Perspective environment should not require manual recreation of the PHX runtime UI foundation. The target behavior is:
+
+  * start from a blank Ignition Perspective project/canvas
+  * load the controlled PHX Script Library package
+  * recreate the PHX Runtime UI context structure
+  * verify that the expected Perspective runtime views and supporting context modules exist
+  * prepare the environment for later topology-driven runtime generation
+
+This does not mean that plant-specific dashboards are fully complete before field discovery. The goal of this step is to prepare the reusable PHX runtime UI foundation so that later field-derived topology, signal mapping, and observability views can be attached to a known Perspective structure.
+
 Expected output:
 
 - External PHX Deploy API preparation
@@ -107,6 +137,8 @@ Expected output:
 **Phase Type:** Pre-field library preparation
 
 This stage prepares the reusable field-side library required for a standard PHX IIoT setup.
+
+The reusable field-side library will also include the PHX Runtime UI Context rehydration package prepared during Stage 0.0. This allows a new Ignition Perspective environment to start from a blank project state and receive the standard PHX runtime UI context before plant-specific topology and signal mapping are applied.
 
 The purpose is to create the minimum reusable foundation before entering the real plant discovery phase: simulated manufacturing assets, sample OPC-UA structures, topology templates, dashboard templates, reusable setup scripts, and a field discovery checklist.
 
